@@ -20,10 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NavBar />
-        <main>
-          <Container className="py-4">{children}</Container>
-        </main>
+        <SSRProvider>
+          <NavBar />
+          <main>
+            <Container className="py-4">{children}</Container>
+          </main>
+        </SSRProvider>
       </body>
     </html>
   );
