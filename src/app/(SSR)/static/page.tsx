@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Alert } from "@/components/bootstrap";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Static Fetching - Image Gallery",
@@ -28,14 +29,19 @@ export default async function Page() {
         Eventhough the Unsplash aPI always returs a new image, we see the same
         image after refreshing the page until we compile the project again.
       </Alert>
-      <Image
-        src={image.urls.raw}
-        width={width}
-        height={height}
-        alt={image.description}
-        className="rounded shadow mw-100 h-100"
-      />
-      <Link href={"/users/" + image.user.username}>{image.user.username}</Link>
+      <Suspense fallback={<p>Loading...</p>}>
+        <Image
+          src={image.urls.raw}
+          width={width}
+          height={height}
+          alt={image.description}
+          className="rounded shadow mw-100 h-100"
+        />
+        <div>RAW : {image.urls.raw}</div>
+        <Link href={"/users/" + image.user.username}>
+          {image.user.username}
+        </Link>
+      </Suspense>
     </div>
   );
 }
