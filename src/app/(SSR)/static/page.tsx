@@ -15,6 +15,10 @@ export default async function Page() {
     "@@@@@@@@@@@@@@@@@@@ UNSPLASH_ACCESS_KEY : ",
     process.env.UNSPLASH_ACCESS_KEY
   );
+  console.log(
+    "############## NEXT_PUBLIC_UNSPLASH_ACCESS_KEY : ",
+    process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY
+  );
 
   const response = await fetch(
     "https://api.unsplash.com/photos/random?client_id=" +
