@@ -1,5 +1,5 @@
 import NotFound from "@/app/not-found";
-import { UnsplashUser } from "@/models/unsplash-user";
+import { UnsplashUser } from "@/app/models/unsplash-user";
 import { notFound } from "next/navigation";
 import { cache } from "react";
 import { Alert } from "@/components/bootstrap";

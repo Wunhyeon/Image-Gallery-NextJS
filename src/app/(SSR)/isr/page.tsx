@@ -1,4 +1,4 @@
-import { UnsplashImage } from "@/models/unsplash-image";
+import { UnsplashImage } from "@/app/models/unsplash-image";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
